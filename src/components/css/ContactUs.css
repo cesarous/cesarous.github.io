@@ -1,59 +1,107 @@
 .contact-form {
-    background-color: #ffffff;
-    margin-top: 50px;
-    padding: 20px;
-    border-radius:10px;
-    border-width:1px;
-    box-shadow: 0 4px 15px 0 #49494b;
-  }
-  
-  .contact-form div {
-    display: grid;
-    gap: 0px; /* Add some gap between the columns */
-    grid-template-columns: 1fr 1fr; /* Two items per row */
-  }
-  
-  .contact-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 640px;
+}
 
-  }
-  
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form input[type="tel"],
-  .contact-form textarea {
-    border: 1px solid #ccc;
-    padding: 5px;
-    font-size: 16px;
-    width: 100%;
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 
+@media (max-width: 640px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
   }
- 
-  .contact-form input[type="submit"] {
-    background-color: #ffffff;
-    color: #49494b;
-    margin-top: 10px;
-    max-width: "sm";
-    border-width: 1px;
-    border-radius: 10px;
-    overflow: 'hidden';
-    transition: 'box-shadow 0.3s ease-in-out';
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .contact-form input[type="submit"]:hover {
-    box-shadow: 0 4px 8px 0  rgba(11, 43, 11, 0.2), 0 6px 20px 0 rgb(34, 139, 34, .2);
-  }
-  
-/* rgba(94, 23, 235, 0.2)*/
-  
-  form {
-    max-width: 800px; /* Set a maximum width for the form */
-    margin: 0 auto; /* Set the left and right margins to auto to center the form */
-    
-  }
-  
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.contact-form label {
+  font-family: 'Red Hat Mono Variable', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(125, 125, 129);
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 16px;
+  color: #1a1a1a;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(125, 125, 129, 0.5);
+  padding: 6px 2px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #1a1a1a;
+  box-shadow: 0 1px 0 0 #1a1a1a;
+}
+
+.contact-form-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.contact-form-submit {
+  font-family: 'Red Hat Mono Variable', monospace;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.contact-form-submit:hover {
+  background-color: #000000;
+}
+
+.contact-form-submit:active {
+  transform: scale(0.98);
+}
+
+.contact-form-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.contact-form-submit:focus-visible {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1a1a1a;
+}
+
+.contact-form-status {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 14px;
+  margin: 0;
+}
+
+.contact-form-status--success {
+  color: rgb(56, 122, 56);
+}
+
+.contact-form-status--error {
+  color: rgb(158, 58, 58);
+}

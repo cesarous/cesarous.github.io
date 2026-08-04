@@ -1,0 +1,116 @@
+.about-section {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.about-subheading {
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+
+.about-list {
+  list-style: none;
+  margin: 0 0 0 3%;
+  padding: 0;
+}
+
+.about-list-item {
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.about-inline-link {
+  color: #49494b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.about-inline-link:hover,
+.about-inline-link:focus-visible {
+  color: #000000;
+}
+
+.topic-index {
+  list-style: none;
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+
+.topic-index-entry {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+  transition: padding-left 0.3s ease;
+}
+
+.topic-index:first-of-type .topic-index-entry:first-child {
+  padding-top: 8px;
+}
+
+.topic-index-entry:hover {
+  padding-left: 8px;
+}
+
+.topic-index-number {
+  font-family: 'Gentium Book Plus', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: rgba(125, 125, 129, 0.55);
+  transition: color 0.3s ease;
+}
+
+.topic-index-entry:hover .topic-index-number {
+  color: #1a1a1a;
+}
+
+.topic-index-title {
+  font-family: 'Gentium Book Plus', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.topic-index-body {
+  margin: 0 0 10px 0;
+}
+
+.topic-index-tags {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-style: italic;
+  font-size: 13px;
+  color: rgb(125, 125, 129);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .topic-index-entry {
+    grid-template-columns: 32px 1fr;
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .topic-index-number {
+    font-size: 20px;
+  }
+
+  .topic-index-title {
+    font-size: 19px;
+  }
+}
+
+.tech-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tech-tag-row .tag-chip {
+  font-size: 14px;
+  padding: 6px 12px;
+}

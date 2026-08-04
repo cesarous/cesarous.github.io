@@ -1,18 +1,124 @@
 .center-content {
     display: flex;
-    align-items: center;
-    height: 100vh; /* Adjust the percentage or use a fixed value for vertical adjustment */
+    align-items: flex-start; /* Don't vertically center tall page content - that pushes its top above the fold */
+    min-height: 100dvh; /* Use dynamic viewport height so mobile browser chrome doesn't clip content */
 
+  }
+
+.main-content {
+    padding: 1.5rem;
+    box-sizing: border-box;
+    min-width: 0; /* let long content (images, code blocks) shrink instead of overflowing the flex row */
+    flex: 1;
   }
 
 .sidebar {
     background-color: rgb(255, 255, 255) !important;
-    height: 100vh;
+    height: 100dvh;
     width: 15%;
+    min-width: 200px;
+    max-width: 260px;
+    /* react-pro-sidebar's own emotion-injected styles set position:relative
+       at the same specificity and their <style> tag tends to land after this
+       one, winning the cascade tie - !important guarantees the sticky
+       positioning actually takes effect regardless of injection order. */
+    position: sticky !important;
+    top: 0 !important;
+    flex-shrink: 0;
+}
+
+.sidebar-logo {
+  display: block;
+  width: 60%;
+  max-width: 120px;
+  height: auto;
+  margin: 40px auto 32px auto;
+}
+
+.nav-item-link {
+  text-decoration: none;
+  display: block;
 }
 
 .custom-menu-item{
-  background-color:white !important;  
+  background-color: white !important;
+  color: #49494b !important;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.custom-menu-item:hover {
+  background-color: #f7f7f7 !important;
+  color: #000000 !important;
+}
+
+.custom-menu-item--active {
+  background-color: #f0f0f0 !important;
+  color: #000000 !important;
+  border-left: 3px solid #49494b;
+  font-weight: 700;
+}
+
+/* Desktop: no toggle button, sidebar is always visible in its sticky column. */
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Stack: toggle row, then the (collapsible) nav, then page content. */
+  .center-content {
+    flex-direction: column;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    border: none;
+    border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+    color: #49494b;
+    font-family: 'Red Hat Mono Variable', monospace;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle-label {
+    line-height: 1;
+  }
+
+  /* Sidebar becomes a normal in-flow block, collapsed by default - no
+     position:fixed/sticky, no overlay, no backdrop. Toggling just reveals
+     it inline and pushes the page content below it down. */
+  .sidebar {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    flex-shrink: 1;
+    border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+    display: none;
+  }
+
+  .sidebar.sidebar--open {
+    display: block;
+  }
+
+  .sidebar-logo {
+    margin: 24px auto 16px auto;
+  }
+
+  .main-content {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .menu-separator{

@@ -41,12 +41,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
+    "dev": "vite",
+    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "vite build",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +70,8 @@
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
-    "react-router-dom": "^6.22.3"
+    "@vitejs/plugin-react": "^4.7.0",
+    "react-router-dom": "^6.22.3",
+    "vite": "^5.4.21"
   }
 }

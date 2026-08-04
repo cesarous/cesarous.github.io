@@ -1,0 +1,115 @@
+.experience-section {
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.experience-group-heading {
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+}
+
+.timeline:first-of-type .timeline-entry:first-child {
+  padding-top: 8px;
+}
+
+.timeline-logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.timeline-logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.1);
+  opacity: 0.85;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline-entry:hover .timeline-logo img {
+  filter: none;
+  opacity: 1;
+}
+
+.timeline-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.timeline-role {
+  font-family: 'Gentium Book Plus', serif;
+  font-weight: 400;
+  font-size: 21px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.timeline-dates {
+  font-family: 'Red Hat Mono Variable', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(125, 125, 129);
+  white-space: nowrap;
+}
+
+.timeline-org {
+  font-family: 'Red Hat Mono Variable', monospace;
+  font-size: 14px;
+  color: #49494b;
+  margin: 4px 0 10px 0;
+}
+
+.timeline-description {
+  font-family: 'Source Code Pro Variable', monospace;
+  color: rgb(83, 83, 83);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-list {
+  list-style: none;
+  margin: 0 0 0 3%;
+  padding: 0;
+}
+
+.about-list-item {
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .timeline-entry {
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
+  }
+
+  .timeline-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .timeline-role {
+    font-size: 18px;
+  }
+}

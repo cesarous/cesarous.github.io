@@ -30,12 +30,17 @@ margin-top: 20px;
 
 .home_box{
   align-items:start;
+  /* .home_box has overflow-y:auto (from boxStyles), which establishes a
+     block-formatting context - that traps a negative margin on any
+     descendant, so the offset has to be applied here, on .home_box itself
+     as a direct child of .main-content, to actually cancel .main-content's
+     1.5rem top padding and put the hero image flush with the true page top. */
+  margin-top: -1.5rem;
 }
 
 .image_class{
   align-items:start;
-  margin-top: -29.7% !important;    
-  clip-path: polygon(20% 0%,  
+  clip-path: polygon(20% 0%,
                   80% 0%, 80% 30%, 75% 75%, 50% 90%, 25% 75%, 20% 30%);
   width:90vw !important;
   height:auto;
@@ -55,14 +60,49 @@ margin-top: 20px;
 
 .image_class_bot{
   align-items: start;
-  clip-path: polygon(20% 100%,  
-                     80% 100%, 
-                     80% 70%, 
-                     75% 25%, 
-                     50% 35%, 
-                     25% 25%, 
+  clip-path: polygon(20% 100%,
+                     80% 100%,
+                     80% 70%,
+                     75% 25%,
+                     50% 35%,
+                     25% 25%,
                      20% 70%);
   width: 90vw !important;
   height: auto;
 
+}
+
+.home-section {
+  /* No left/right margin here on purpose - Projects.jsx and Connect.jsx render
+     their content directly inside the shared 90%-width outer box with no
+     extra inner squeeze, so this matches their width instead of narrowing
+     Home's sections further. */
+  text-align: left;
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+.home-section-body {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+.home-cta-row {
+  margin-top: 16px;
+}
+
+.home-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  /* The tree banners are cropped for a wide desktop hero and don't hold up
+     at phone width - drop them and let the name/tagline/buttons block take
+     over the hero on mobile. */
+  .hero-tree-row {
+    display: none;
+  }
 }
