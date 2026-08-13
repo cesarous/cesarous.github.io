@@ -7,6 +7,39 @@
     <meta name="theme-color" content="#49494b" />
     <link rel="apple-touch-icon" href="/favicon.ico?" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!--
+      Site-wide identity, in the base template so the prerender step copies it
+      into every route and crawlers that do not run JavaScript still see it.
+      Per-page title, description and social tags are stamped in per route -
+      see scripts/prerender-meta.mjs.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://cesarous.github.io/#person",
+          "name": "Cesar Rodriguez",
+          "url": "https://cesarous.github.io/",
+          "jobTitle": "Software Engineer",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Michigan"
+          },
+          "knowsAbout": ["Software Engineering", "Web Development", "Data Engineering"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cesarous.github.io/#website",
+          "url": "https://cesarous.github.io/",
+          "name": "Cesar Rodriguez",
+          "publisher": { "@id": "https://cesarous.github.io/#person" }
+        }
+      ]
+    }
+    </script>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // https://github.com/rafgraph/spa-github-pages
@@ -26,20 +59,20 @@
         }
       })(window.location);
     </script>
-    <script type="module" crossorigin src="/assets/index-BfkmlAb9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CJ3n6Yzf.css">
+    <script type="module" crossorigin src="/assets/index-DYAx5K5A.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-K4-YN5Zk.css">
     <title>Cesar Rodriguez | Software Engineer</title>
     <link rel="canonical" href="https://cesarous.github.io/" />
     <meta name="description" content="Portfolio of Cesar Rodriguez, a software engineer building reliable systems, web applications, and research-driven tools." />
     <meta property="og:title" content="Cesar Rodriguez | Software Engineer" />
     <meta property="og:description" content="Portfolio of Cesar Rodriguez, a software engineer building reliable systems, web applications, and research-driven tools." />
     <meta property="og:url" content="https://cesarous.github.io/" />
-    <meta property="og:image" content="https://cesarous.github.io/favicon.ico" />
+    <meta property="og:image" content="https://cesarous.github.io/og-image.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Cesar Rodriguez | Software Engineer" />
     <meta name="twitter:description" content="Portfolio of Cesar Rodriguez, a software engineer building reliable systems, web applications, and research-driven tools." />
-    <meta name="twitter:image" content="https://cesarous.github.io/favicon.ico" />
+    <meta name="twitter:image" content="https://cesarous.github.io/og-image.png" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
