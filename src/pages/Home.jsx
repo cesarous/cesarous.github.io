@@ -56,6 +56,9 @@ const Home = () => {
               <Button className="button-with-hover" onClick={() => navigate('/connect')}>
                 Contact Me
               </Button>
+              <Button className="button-with-hover" onClick={() => navigate('/ccda-viewer')}>
+                C-CDA Viewer
+              </Button>
             </div>
 
           </Box>

@@ -16,7 +16,8 @@ export const paid_projects = [
   {
     id: 2,
     title: 'C-CDA File Viewer',
-    link: 'https://github.com/cesarous/ccda_viewer',
+    link: '/ccda-viewer',
+    linkLabel: 'View the download page',
     image: 'CCDA.png',
     description: "Reverse-engineered parser that makes CCDA medical files readable for legal staff at Burnes and Libman."
   },
@@ -59,11 +60,10 @@ export const fun_projects = [
   },
 ];
 
-// A small, high-signal slice for the Home page teaser - one from each
-// category so the landing page shows range without becoming another
-// full project listing.
+// A small, high-signal slice for the Home page teaser. The C-CDA Viewer is
+// included while its dedicated download page is being featured.
 export const featured_projects = [
   paid_projects[0], // NextArena - flagship / leadership
-  paid_projects[3], // Illinois Deaths in Custody Project - social-impact data work
+  paid_projects[2], // C-CDA Viewer - featured desktop tool and download page
   fun_projects[0],  // Poetics of Decryption - technical curiosity project
 ];

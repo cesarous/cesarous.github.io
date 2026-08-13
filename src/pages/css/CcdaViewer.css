@@ -1,0 +1,218 @@
+/* Dedicated landing + download page for the C-CDA File Viewer. Reuses the
+   site's type scale (.project-title / .project-body from Projects.css) and
+   adds only what the download panel needs. */
+
+.ccda-hero {
+  text-align: left;
+  margin-top: 4%;
+}
+
+.ccda-eyebrow {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgb(125, 125, 129);
+  margin: 0;
+}
+
+.ccda-hero-title {
+  margin-top: 8px;
+}
+
+.ccda-lede {
+  max-width: 65ch;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+/* Download panel ---------------------------------------------------------- */
+
+.ccda-download-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 32px;
+  padding: 28px 32px;
+  border: 1px solid rgba(125, 125, 129, 0.35);
+  border-radius: 10px;
+  background-color: #fafafa;
+  max-width: 65ch;
+}
+
+/* One column per platform, side by side on desktop and stacked on mobile. */
+.ccda-download-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  width: 100%;
+}
+
+.ccda-download-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ccda-download-button {
+  display: inline-block;
+  font-family: 'Red Hat Mono Variable', monospace;
+  font-size: 17px;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 14px 28px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.ccda-download-button:hover,
+.ccda-download-button:focus-visible {
+  background-color: #000000;
+  box-shadow: 0 4px 8px 0 rgba(11, 43, 11, 0.2), 0 6px 20px 0 rgba(34, 139, 34, 0.2);
+  outline: none;
+}
+
+.ccda-download-meta {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 13px;
+  color: rgb(105, 105, 109);
+  margin: 0;
+  max-width: 55ch;
+  line-height: 1.5;
+}
+
+/* Version line sits under both buttons, applying to the release as a whole. */
+.ccda-download-version {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 13px;
+  color: rgb(125, 125, 129);
+  margin: 6px 0 0 0;
+}
+
+.ccda-support-link {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 12px;
+  color: rgb(105, 105, 109);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(105, 105, 109, 0.35);
+  margin-top: 4px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ccda-support-link:hover,
+.ccda-support-link:focus-visible {
+  color: #49494b;
+  border-color: #49494b;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Body sections ----------------------------------------------------------- */
+
+.ccda-section {
+  text-align: left;
+  margin-top: 7%;
+}
+
+.ccda-body {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+/* Per-platform heading inside a section, a step below .project-title. */
+.ccda-subhead {
+  font-family: 'Red Hat Mono Variable', monospace;
+  font-size: 16px;
+  color: #49494b;
+  margin: 28px 0 0 0;
+}
+
+.ccda-subhead:first-of-type {
+  margin-top: 16px;
+}
+
+.ccda-list,
+.ccda-steps {
+  max-width: 65ch;
+  margin: 16px 0 0 0;
+}
+
+.ccda-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ccda-steps {
+  padding-left: 36px;
+}
+
+.ccda-list-item {
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* Hanging dash marker for the unordered list, to match the site's restrained
+   typographic feel rather than a default bullet. */
+.ccda-list > .ccda-list-item {
+  position: relative;
+  padding-left: 22px;
+}
+
+.ccda-list > .ccda-list-item::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: rgba(125, 125, 129, 0.8);
+}
+
+.ccda-steps > .ccda-list-item {
+  padding-left: 4px;
+}
+
+.ccda-code {
+  font-family: 'Source Code Pro Variable', monospace;
+  font-size: 0.92em;
+  background-color: #f0f0f0;
+  border: 1px solid #d6d6d8;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.ccda-note {
+  max-width: 65ch;
+  line-height: 1.6;
+  margin-top: 20px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(125, 125, 129, 0.45);
+  font-style: italic;
+}
+
+.ccda-cta-row {
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .ccda-download-panel {
+    padding: 22px 20px;
+  }
+
+  /* Stack the platforms so each button can go full-width. */
+  .ccda-download-row {
+    flex-direction: column;
+  }
+
+  .ccda-download-option {
+    width: 100%;
+  }
+
+  .ccda-download-button {
+    font-size: 15px;
+    padding: 13px 20px;
+    text-align: center;
+    width: 100%;
+  }
+}

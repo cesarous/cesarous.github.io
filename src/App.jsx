@@ -18,12 +18,54 @@ const menu_list = [
   { id: 5, title: 'Connect', path: '/connect', icon: 'Phone' },
 ];
 
-const PAGE_TITLES = {
-  '/': 'Cesar Rodriguez',
-  '/about': 'About - Cesar Rodriguez',
-  '/experience': 'Experience - Cesar Rodriguez',
-  '/projects': 'Projects - Cesar Rodriguez',
-  '/connect': 'Connect - Cesar Rodriguez',
+const SITE_URL = 'https://cesarous.github.io';
+const DEFAULT_IMAGE = `${SITE_URL}/CCDA.png`;
+
+const PAGE_META = {
+  '/': {
+    title: 'Cesar Rodriguez | Software Engineer',
+    description: 'Portfolio of Cesar Rodriguez, a software engineer building reliable systems, web applications, and research-driven tools.',
+  },
+  '/about': {
+    title: 'About | Cesar Rodriguez',
+    description: 'Learn about Cesar Rodriguez, a software engineer and University of Michigan Computer Science Engineering graduate.',
+  },
+  '/experience': {
+    title: 'Experience | Cesar Rodriguez',
+    description: 'Professional experience, engineering work, and technical background from Cesar Rodriguez.',
+  },
+  '/projects': {
+    title: 'Projects | Cesar Rodriguez',
+    description: 'Selected software, data, research, and creative coding projects by Cesar Rodriguez.',
+  },
+  '/connect': {
+    title: 'Connect | Cesar Rodriguez',
+    description: 'Contact Cesar Rodriguez about software engineering roles, freelance work, and interesting technical problems.',
+  },
+  '/ccda-viewer': {
+    title: 'C-CDA File Viewer for Windows and macOS | Cesar Rodriguez',
+    description: 'A free desktop viewer for Windows and macOS that turns C-CDA and CCDA XML medical record exports into a structured, readable document. No upload, no file limit, no account.',
+    image: DEFAULT_IMAGE,
+  },
+};
+
+const setMetaContent = (selector, attributes) => {
+  let element = document.head.querySelector(selector);
+  if (!element) {
+    element = document.createElement('meta');
+    document.head.appendChild(element);
+  }
+  Object.entries(attributes).forEach(([name, value]) => element.setAttribute(name, value));
+};
+
+const setCanonical = (href) => {
+  let element = document.head.querySelector('link[rel="canonical"]');
+  if (!element) {
+    element = document.createElement('link');
+    element.setAttribute('rel', 'canonical');
+    document.head.appendChild(element);
+  }
+  element.setAttribute('href', href);
 };
 
 const MyItem = ({ box, isActive, onNavigate }) => {
@@ -61,7 +103,22 @@ function App() {
   const [toggled, setToggled] = useState(false);
 
   useEffect(() => {
-    document.title = PAGE_TITLES[location.pathname] || PAGE_TITLES['/'];
+    const page = PAGE_META[location.pathname] || PAGE_META['/'];
+    const canonical = `${SITE_URL}${location.pathname === '/' ? '/' : location.pathname}`;
+    const image = page.image || `${SITE_URL}/favicon.ico`;
+
+    document.title = page.title;
+    setCanonical(canonical);
+    setMetaContent('meta[name="description"]', { name: 'description', content: page.description });
+    setMetaContent('meta[property="og:title"]', { property: 'og:title', content: page.title });
+    setMetaContent('meta[property="og:description"]', { property: 'og:description', content: page.description });
+    setMetaContent('meta[property="og:url"]', { property: 'og:url', content: canonical });
+    setMetaContent('meta[property="og:image"]', { property: 'og:image', content: image });
+    setMetaContent('meta[property="og:type"]', { property: 'og:type', content: 'website' });
+    setMetaContent('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });
+    setMetaContent('meta[name="twitter:title"]', { name: 'twitter:title', content: page.title });
+    setMetaContent('meta[name="twitter:description"]', { name: 'twitter:description', content: page.description });
+    setMetaContent('meta[name="twitter:image"]', { name: 'twitter:image', content: image });
   }, [location.pathname]);
 
   // Jump to the top of the page on every route change - otherwise the new

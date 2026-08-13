@@ -12,6 +12,7 @@ import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Connect from './pages/Connect';
+import CcdaViewer from './pages/CcdaViewer';
 
 
 library.add(fab, fas, far);
@@ -31,6 +32,8 @@ createRoot(document.getElementById('root')).render(
           <Route path="experience" element={<Experience />} />
           <Route path="projects" element={<Projects />} />
           <Route path="connect" element={<Connect />} />
+          <Route path="ccda-viewer" element={<CcdaViewer />} />
+          <Route path="ccdaviewer" element={<Navigate to="/ccda-viewer" replace />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

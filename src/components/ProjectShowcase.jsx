@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/ProjectShowcase.css';
 
 const isExternal = (link) => /^https?:\/\//.test(link || '');
 
 const ProjectRow = ({ project, reversed }) => {
+  const navigate = useNavigate();
+  const external = isExternal(project.link);
+
   return (
     <article className={`project-row${reversed ? ' project-row--reversed' : ''}`}>
       <div className="project-row-media">
@@ -16,10 +20,16 @@ const ProjectRow = ({ project, reversed }) => {
           <a
             className="project-row-link"
             href={project.link}
-            target={isExternal(project.link) ? '_blank' : undefined}
-            rel={isExternal(project.link) ? 'noreferrer' : undefined}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noreferrer' : undefined}
+            onClick={(event) => {
+              if (external) return;
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+              event.preventDefault();
+              navigate(project.link);
+            }}
           >
-            View project <span className="project-row-link-arrow" aria-hidden="true">&#8594;</span>
+            {project.linkLabel || 'View project'} <span className="project-row-link-arrow" aria-hidden="true">&#8594;</span>
           </a>
         )}
       </div>
