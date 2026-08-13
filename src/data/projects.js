@@ -10,9 +10,9 @@ export const paid_projects = [
     id: 1,
     title: 'Isreal Carpet Cleaning Co.',
     image: '/ICCS_logo.png',
-    // The repo was renamed from ICCS, and GitHub Pages URLs do not follow a
-    // repo rename the way repo URLs do - the old /ICCS/ path just 404s.
-    link: 'https://cesarous.github.io/Isreal-Carpet-Cleaning-Service/',
+    // The path is the repo name, so renaming the repo moves this page -
+    // GitHub Pages URLs do not follow a rename the way repo URLs do.
+    link: 'https://cesarous.github.io/Isreal-Carpet-Cleaning-Co/',
     description: 'Built a marketing website for a local carpet cleaning business to drive bookings.'
   },
   {
