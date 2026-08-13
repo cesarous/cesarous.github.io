@@ -192,7 +192,16 @@
 }
 
 .ccda-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: 16px;
+}
+
+/* See .home-cta-row - spacing comes from the gap, so it survives wrapping. */
+.ccda-cta-row .button-with-hover {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (max-width: 640px) {
@@ -203,6 +212,7 @@
   /* Stack the platforms so each button can go full-width. */
   .ccda-download-row {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .ccda-download-option {

@@ -47,6 +47,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "vite build",
+    "downloads": "node scripts/ccda-downloads.mjs",
     "test": "react-scripts test"
   },
   "eslintConfig": {

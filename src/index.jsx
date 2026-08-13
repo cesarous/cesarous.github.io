@@ -13,9 +13,11 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Connect from './pages/Connect';
 import CcdaViewer from './pages/CcdaViewer';
+import { initAnalytics } from './lib/analytics';
 
 
 library.add(fab, fas, far);
+initAnalytics();
 
 // Real multi-page site: Home is the landing page, About/Experience/Projects/
 // Connect are standalone destinations linked from the nav and from Home's

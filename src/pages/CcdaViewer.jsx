@@ -5,6 +5,7 @@ import './css/CcdaViewer.css';
 import './css/shared.css';
 import { boxStyles } from './css/Exterior_box.js';
 import { ccdaDownload } from '../data/ccdaDownload.js';
+import { trackEvent } from '../lib/analytics';
 
 const tech_stack = ["Python", "XML / C-CDA", "Desktop app", "Windows", "macOS"];
 
@@ -20,7 +21,7 @@ const CcdaViewer = () => {
       operatingSystem: ccdaDownload.builds.map((build) => build.operatingSystem).join(', '),
       url: 'https://cesarous.github.io/ccda-viewer',
       image: 'https://cesarous.github.io/CCDA.png',
-      description: 'A desktop viewer for Windows and macOS that turns C-CDA and CCDA XML medical record exports into a structured, readable document.',
+      description: 'Opens the C-CDA and CCDA XML files hospitals send and lays them out as a record you can actually read - medications, allergies, problems, immunizations, encounters and procedures - with search and printing built in. Runs entirely on your own machine, on Windows and macOS.',
       downloadUrl: ccdaDownload.builds.map((build) => build.href),
       softwareVersion: ccdaDownload.version,
     };
@@ -57,6 +58,10 @@ const CcdaViewer = () => {
                   className="ccda-download-button"
                   href={build.href}
                   download={build.fileName}
+                  onClick={() => trackEvent('ccda-download', {
+                    build: build.id,
+                    version: ccdaDownload.version,
+                  })}
                 >
                   {build.label}
                 </a>
@@ -74,6 +79,9 @@ const CcdaViewer = () => {
             href={ccdaDownload.supportUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackEvent('ccda-support-click', {
+              version: ccdaDownload.version,
+            })}
           >
             Support continued development
           </a>

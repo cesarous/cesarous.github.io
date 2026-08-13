@@ -88,7 +88,18 @@ margin-top: 20px;
 }
 
 .home-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: 16px;
+}
+
+/* Spacing is the row's job, not the button's. The percentage side margins
+   could not keep a fixed separation (they shrink with the viewport) and left
+   nothing at all between buttons that wrapped onto a second line. */
+.home-cta-row .button-with-hover {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .home-tag-row {
