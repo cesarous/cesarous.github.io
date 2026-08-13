@@ -12,6 +12,39 @@
     <link rel="apple-touch-icon" href="/favicon.ico?" />
     <link rel="manifest" href="/manifest.json" />
     <title>Cesar Rodriguez | Software Engineer</title>
+
+    <!--
+      Site-wide identity, in the base template so the prerender step copies it
+      into every route and crawlers that do not run JavaScript still see it.
+      Per-page title, description and social tags are stamped in per route -
+      see scripts/prerender-meta.mjs.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://cesarous.github.io/#person",
+          "name": "Cesar Rodriguez",
+          "url": "https://cesarous.github.io/",
+          "jobTitle": "Software Engineer",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Michigan"
+          },
+          "knowsAbout": ["Software Engineering", "Web Development", "Data Engineering"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cesarous.github.io/#website",
+          "url": "https://cesarous.github.io/",
+          "name": "Cesar Rodriguez",
+          "publisher": { "@id": "https://cesarous.github.io/#person" }
+        }
+      ]
+    }
+    </script>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // https://github.com/rafgraph/spa-github-pages

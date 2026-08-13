@@ -11,7 +11,19 @@ const ProjectRow = ({ project, reversed }) => {
   return (
     <article className={`project-row${reversed ? ' project-row--reversed' : ''}`}>
       <div className="project-row-media">
-        {project.image && <img src={project.image} alt={project.title} loading="lazy" />}
+        {/* width/height are the file's real pixel dimensions, not display
+            size. CSS still governs how big the image renders; giving the
+            browser the aspect ratio up front stops the card from reflowing
+            when a lazy-loaded image arrives. */}
+        {project.image && (
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            width={project.width}
+            height={project.height}
+          />
+        )}
       </div>
       <div className="project-row-body">
         <h3 className="project-row-title">{project.title}</h3>

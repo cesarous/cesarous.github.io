@@ -7,21 +7,26 @@ import { paid_projects, school_projects, fun_projects } from '../data/projects.j
 const Projects = () => {
   return (
     <Box maxWidth="xxl" mx="auto" display='inLine' alignItems='center' marginBottom='10% !important' sx={boxStyles}>
-      <h1 id="projects" className="project-title">
+      {/* One h1 names the page; the three groups below are sections under it.
+          It is visually hidden because the design opens straight into the
+          first group - three competing h1s left the page with no subject. */}
+      <h1 className="sr-only">Projects</h1>
+
+      <h2 id="projects" className="project-title">
         Freelance Work
-      </h1>
+      </h2>
       <hr className="header-separator" />
       <ProjectShowcase projects={paid_projects} />
 
-      <h1 className="project-title">
+      <h2 className="project-title">
         Personal Projects
-      </h1>
+      </h2>
       <hr className="header-separator" />
       <ProjectShowcase projects={school_projects} />
 
-      <h1 className="project-title">
+      <h2 className="project-title">
         For Fun
-      </h1>
+      </h2>
       <hr className="header-separator" />
       <ProjectShowcase projects={fun_projects} />
     </Box>

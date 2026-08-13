@@ -8,6 +8,7 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Connect from './pages/Connect';
 import CcdaViewer from './pages/CcdaViewer';
+import NotFound from './pages/NotFound';
 import { initAnalytics } from './lib/analytics';
 
 
@@ -15,8 +16,13 @@ initAnalytics();
 
 // Real multi-page site: Home is the landing page, About/Experience/Projects/
 // Connect are standalone destinations linked from the nav and from Home's
-// teasers. Old/unknown paths (including the previous /services,
-// /qualifications stubs) redirect to Home rather than rendering a dead page.
+// teasers.
+//
+// The retired /services and /qualifications stubs redirect to Home, since
+// links to them may still exist. Anything else renders a not-found page
+// rather than silently landing on Home - a redirect there tells a visitor
+// nothing and leaves search engines indexing dead URLs as duplicates of the
+// home page.
 createRoot(document.getElementById('root')).render(
 
   <ChakraProvider>
@@ -30,8 +36,10 @@ createRoot(document.getElementById('root')).render(
           <Route path="connect" element={<Connect />} />
           <Route path="ccda-viewer" element={<CcdaViewer />} />
           <Route path="ccdaviewer" element={<Navigate to="/ccda-viewer" replace />} />
+          <Route path="services" element={<Navigate to="/" replace />} />
+          <Route path="qualifications" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   </ChakraProvider>

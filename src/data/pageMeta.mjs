@@ -11,7 +11,11 @@
 export const SITE_URL = 'https://cesarous.github.io';
 
 const CCDA_IMAGE = `${SITE_URL}/CCDA.png`;
-const FALLBACK_IMAGE = `${SITE_URL}/favicon.ico`;
+
+// A 1200x630 card, the size link previews expect. The fallback used to be
+// favicon.ico, which social platforms will not render as a preview image at
+// all - every page but /ccda-viewer shared as a bare text stub.
+const FALLBACK_IMAGE = `${SITE_URL}/og-image.png`;
 
 export const PAGE_META = {
   '/': {
