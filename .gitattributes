@@ -1,0 +1,17 @@
+# Normalize line endings on commit and check out LF everywhere.
+#
+# This repo is edited from Windows over a /mnt/c path, and without this whole
+# files kept showing up as rewritten when only their line endings had changed -
+# a two-line edit would arrive as a 140-line diff and bury the real change.
+* text=auto eol=lf
+
+# Binary assets git should never touch.
+*.png binary
+*.jpg binary
+*.JPG binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

@@ -51,11 +51,13 @@ const Home = () => {
             <p className='home-body'>
               software engineer
             </p>
-            <div>
-              <Button className="button-with-hover" onClick={handleResumeClick}> Resume </Button>
-              <Button className="button-with-hover" onClick={() => navigate('/connect')}>
-                Contact Me
-              </Button>
+            <div style={{display:"flex", gap:"0.5rem", flexDirection:"column"}}>
+              <div style={{display:"flex", gap:"0.5rem"}}>
+                <Button className="button-with-hover" onClick={handleResumeClick}> Resume </Button>
+                <Button className="button-with-hover" onClick={() => navigate('/connect')}>
+                  Contact Me
+                </Button>
+              </div>
               <Button className="button-with-hover" onClick={() => navigate('/ccda-viewer')}>
                 C-CDA Viewer
               </Button>
