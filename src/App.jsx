@@ -10,6 +10,8 @@ import { Image } from "@chakra-ui/react";
 
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
+import { buildPageMeta } from './data/pageMeta.mjs';
+
 const menu_list = [
   { id: 1, title: 'Home', path: '/', icon: 'Home' },
   { id: 2, title: 'About', path: '/about', icon: 'Person' },
@@ -17,37 +19,6 @@ const menu_list = [
   { id: 4, title: 'Projects', path: '/projects', icon: 'Engineering' },
   { id: 5, title: 'Connect', path: '/connect', icon: 'Phone' },
 ];
-
-const SITE_URL = 'https://cesarous.github.io';
-const DEFAULT_IMAGE = `${SITE_URL}/CCDA.png`;
-
-const PAGE_META = {
-  '/': {
-    title: 'Cesar Rodriguez | Software Engineer',
-    description: 'Portfolio of Cesar Rodriguez, a software engineer building reliable systems, web applications, and research-driven tools.',
-  },
-  '/about': {
-    title: 'About | Cesar Rodriguez',
-    description: 'Learn about Cesar Rodriguez, a software engineer and University of Michigan Computer Science Engineering graduate.',
-  },
-  '/experience': {
-    title: 'Experience | Cesar Rodriguez',
-    description: 'Professional experience, engineering work, and technical background from Cesar Rodriguez.',
-  },
-  '/projects': {
-    title: 'Projects | Cesar Rodriguez',
-    description: 'Selected software, data, research, and creative coding projects by Cesar Rodriguez.',
-  },
-  '/connect': {
-    title: 'Connect | Cesar Rodriguez',
-    description: 'Contact Cesar Rodriguez about software engineering roles, freelance work, and interesting technical problems.',
-  },
-  '/ccda-viewer': {
-    title: 'C-CDA File Viewer for Windows and macOS | Cesar Rodriguez',
-    description: 'A free C-CDA file viewer for Windows and macOS. Opens CCDA XML medical records as a readable document you can search and print. Nothing leaves your computer.',
-    image: DEFAULT_IMAGE,
-  },
-};
 
 const setMetaContent = (selector, attributes) => {
   let element = document.head.querySelector(selector);
@@ -102,10 +73,12 @@ function App() {
   const navigate = useNavigate();
   const [toggled, setToggled] = useState(false);
 
+  // Keeps the <head> in step with client-side navigation. Direct loads and
+  // crawlers get these same values as static HTML - see the prerender step in
+  // scripts/prerender-meta.mjs, which reads the same source of truth.
   useEffect(() => {
-    const page = PAGE_META[location.pathname] || PAGE_META['/'];
-    const canonical = `${SITE_URL}${location.pathname === '/' ? '/' : location.pathname}`;
-    const image = page.image || `${SITE_URL}/favicon.ico`;
+    const page = buildPageMeta(location.pathname);
+    const { canonical, image } = page;
 
     document.title = page.title;
     setCanonical(canonical);
@@ -155,7 +128,7 @@ function App() {
         <Sidebar className={`sidebar${toggled ? ' sidebar--open' : ''}`}>
           <Image
             className="sidebar-logo"
-            src="favicon.ico"
+            src="/favicon.ico"
             alt="Laurel wreath"
           />
           <Menu iconShape="square">

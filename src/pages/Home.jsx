@@ -25,7 +25,7 @@ const Home = () => {
           <Image className='image_class'
             id="start"
             boxSize='300px'
-            src="babel_COPY.JPG"
+            src="/babel_COPY.JPG"
             alt="tree canopy"
             h="auto"
             objectFit="cover"
@@ -75,7 +75,7 @@ const Home = () => {
             <Image
               borderRadius='full'
               boxSize='100px'
-              src="Headshot.JPG"
+              src="/Headshot.JPG"
               alt="Cesar Rodriguez"
               w="50%"
               h="auto"
@@ -87,7 +87,7 @@ const Home = () => {
         <Box className='hero-tree-row'>
           <Image className='image_class_bot'
             boxSize='20%'
-            src="babel_bottom.JPG"
+            src="/babel_bottom.JPG"
             alt="tree canopy"
             h="auto"
             marginBottom="0% !important"
