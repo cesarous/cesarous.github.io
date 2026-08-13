@@ -1,10 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from './App';
 import Home from './pages/Home';
@@ -16,7 +11,6 @@ import CcdaViewer from './pages/CcdaViewer';
 import { initAnalytics } from './lib/analytics';
 
 
-library.add(fab, fas, far);
 initAnalytics();
 
 // Real multi-page site: Home is the landing page, About/Experience/Projects/

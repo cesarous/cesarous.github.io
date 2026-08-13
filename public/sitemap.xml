@@ -5,23 +5,23 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://cesarous.github.io/about</loc>
+    <loc>https://cesarous.github.io/about/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cesarous.github.io/experience</loc>
+    <loc>https://cesarous.github.io/experience/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cesarous.github.io/projects</loc>
+    <loc>https://cesarous.github.io/projects/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cesarous.github.io/connect</loc>
+    <loc>https://cesarous.github.io/connect/</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cesarous.github.io/ccda-viewer</loc>
+    <loc>https://cesarous.github.io/ccda-viewer/</loc>
     <priority>0.9</priority>
   </url>
 </urlset>

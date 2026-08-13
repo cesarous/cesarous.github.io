@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import './pages/css/Sidebar.css';
-import * as Icons from '@mui/icons-material/'; // Import all icons from Material-UI
+// Imported one by one on purpose. A namespace import of @mui/icons-material
+// pulls the entire set - several thousand components - into the bundle to use
+// the five below.
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
+import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import PhoneIcon from '@mui/icons-material/Phone';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -11,6 +18,14 @@ import { Image } from "@chakra-ui/react";
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import { buildPageMeta } from './data/pageMeta.mjs';
+
+const NAV_ICONS = {
+  Home: HomeIcon,
+  Person: PersonIcon,
+  WorkHistory: WorkHistoryIcon,
+  Engineering: EngineeringIcon,
+  Phone: PhoneIcon,
+};
 
 const menu_list = [
   { id: 1, title: 'Home', path: '/', icon: 'Home' },
@@ -40,7 +55,7 @@ const setCanonical = (href) => {
 };
 
 const MyItem = ({ box, isActive, onNavigate }) => {
-  const BoxIcon = Icons[box.icon];
+  const BoxIcon = NAV_ICONS[box.icon];
 
   return (
     <>

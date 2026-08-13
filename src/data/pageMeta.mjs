@@ -52,10 +52,14 @@ export function buildPageMeta(pathname) {
     : pathname;
   const page = PAGE_META[path] || PAGE_META['/'];
 
+  // The canonical URL carries a trailing slash because that is the URL that
+  // actually returns 200: each route ships as a directory index, and GitHub
+  // Pages 301s /ccda-viewer to /ccda-viewer/. Pointing the canonical at the
+  // redirecting form would name a URL that no longer serves the page.
   return {
     title: page.title,
     description: page.description,
-    canonical: `${SITE_URL}${path}`,
+    canonical: path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}/`,
     image: page.image || FALLBACK_IMAGE,
   };
 }
