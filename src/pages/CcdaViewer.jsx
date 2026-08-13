@@ -21,9 +21,16 @@ const CcdaViewer = () => {
       operatingSystem: ccdaDownload.builds.map((build) => build.operatingSystem).join(', '),
       url: 'https://cesarous.github.io/ccda-viewer',
       image: 'https://cesarous.github.io/CCDA.png',
-      description: 'Opens the C-CDA and CCDA XML files hospitals send and lays them out as a record you can actually read - medications, allergies, problems, immunizations, encounters and procedures - with search and printing built in. Runs entirely on your own machine, on Windows and macOS.',
+      description: 'Opens the C-CDA and CCDA XML files hospitals send and lays them out as a record you can actually read - medications, allergies, problems, immunizations, encounters and procedures - with search and printing built in. Free and unlimited, with no account and no ads, and it runs entirely on your own machine, on Windows and macOS.',
       downloadUrl: ccdaDownload.builds.map((build) => build.href),
       softwareVersion: ccdaDownload.version,
+      // A zero-price Offer is how search engines are told the app is free -
+      // the word "free" in the description alone carries no structured meaning.
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
     };
     const script = document.createElement('script');
     script.id = 'ccda-viewer-structured-data';
@@ -42,9 +49,10 @@ const CcdaViewer = () => {
         <h1 className="project-title ccda-hero-title">C-CDA File Viewer</h1>
         <hr className="header-separator" />
         <p className="project-body ccda-lede">
-          A desktop tool that turns C-CDA medical record exports - dense, machine-oriented XML - into
-          a document a person can actually read. Built for legal staff who receive these files from
-          hospitals and need the contents, not the markup.
+          A free desktop app for Windows and macOS that opens C-CDA and CCDA XML files - the dense,
+          machine-oriented exports hospitals send - and lays them out as a document a person can
+          actually read. Unlimited files, no account, no ads. Built for legal staff who need the
+          contents of a medical record, not the markup.
         </p>
 
         <div className="ccda-download-panel">
@@ -99,8 +107,12 @@ const CcdaViewer = () => {
         <hr className="header-separator" />
         <ul className="ccda-list">
           <li className="project-body ccda-list-item">
-            Opens a C-CDA XML export and renders it as a structured, readable document instead of
-            exposing the underlying markup.
+            Lays out the whole record as readable sections - medications, allergies, problems,
+            immunizations, encounters, procedures - with search and printing built in.
+          </li>
+          <li className="project-body ccda-list-item">
+            Free and unlimited - open as many files as you like, with no account, no subscription
+            and no ads. The support link is a donation, not a paywall.
           </li>
           <li className="project-body ccda-list-item">
             Handles the real-world variation between hospital systems, which rarely emit the spec the
@@ -108,8 +120,8 @@ const CcdaViewer = () => {
             reference implementation.
           </li>
           <li className="project-body ccda-list-item">
-            Runs as a standalone Windows application - no install of Python, no command line, no
-            developer setup.
+            Runs as a standalone app on Windows and macOS - no install of Python, no command line,
+            no developer setup - and works entirely offline, so the file never leaves your computer.
           </li>
         </ul>
       </section>

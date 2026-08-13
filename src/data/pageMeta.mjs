@@ -36,7 +36,7 @@ export const PAGE_META = {
   },
   '/ccda-viewer': {
     title: 'C-CDA File Viewer for Windows and macOS | Cesar Rodriguez',
-    description: 'A free C-CDA file viewer for Windows and macOS. Opens CCDA XML medical records as a readable document you can search and print. Nothing leaves your computer.',
+    description: 'A free C-CDA file viewer for Windows and macOS. Opens CCDA XML medical records as a readable document - unlimited files, no ads, nothing leaves your computer.',
     image: CCDA_IMAGE,
   },
 };
