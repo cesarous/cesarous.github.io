@@ -74,7 +74,25 @@ export const fun_projects = [
     image: '/read_image.jpg',
     width: 768,
     height: 1536,
-    description: "Cracked the code hidden in the \"Poetics of Encryption\" exhibit — polar remapping in OpenCV plus OCR — to reveal its message."
+    description: "Cracked the code hidden in the \"Poetics of Encryption\" exhibit — polar remapping in OpenCV plus OCR — to reveal its message.",
+    // Click-to-reveal content for ProjectRow's expandable panel: the ring's
+    // hex sequence (reordered to start at the sentence, since the source
+    // reads mid-phrase because it's a circle), its decoded translation, and
+    // the two Latin bands with their translations.
+    reveal: {
+      hex: '41 20 6C 69 65 20 74 6F 6C 64 20 6F 66 74 65 6E 20 65 6E 6F 75 67 68 20 62 65 63 6F 6D 65 73 20 74 68 65 20 74 72 75 74 68',
+      translation: 'A lie told often enough becomes the truth',
+      latinBands: [
+        {
+          latin: 'FUTUTI MILITIA MENTALI ESTIS',
+          translation: 'You have been mentally f***ed.'
+        },
+        {
+          latin: 'QUIA VULNERA CORPURLIA CURARENTUR',
+          translation: 'So that bodily wounds might be healed'
+        }
+      ]
+    }
   },
 ];
 

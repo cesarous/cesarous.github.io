@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/ProjectShowcase.css';
 
@@ -7,6 +7,7 @@ const isExternal = (link) => /^https?:\/\//.test(link || '');
 const ProjectRow = ({ project, reversed }) => {
   const navigate = useNavigate();
   const external = isExternal(project.link);
+  const [revealed, setRevealed] = useState(false);
 
   return (
     <article className={`project-row${reversed ? ' project-row--reversed' : ''}`}>
@@ -43,6 +44,42 @@ const ProjectRow = ({ project, reversed }) => {
           >
             {project.linkLabel || 'View project'} <span className="project-row-link-arrow" aria-hidden="true">&#8594;</span>
           </a>
+        )}
+        {project.reveal && (
+          <div className="project-reveal">
+            <button
+              type="button"
+              className="project-reveal-toggle"
+              aria-expanded={revealed}
+              onClick={() => setRevealed((current) => !current)}
+            >
+              {revealed ? 'Hide the decode' : 'Reveal the hidden message'}
+              <span
+                className={`project-reveal-caret${revealed ? ' project-reveal-caret--open' : ''}`}
+                aria-hidden="true"
+              >
+                &#8595;
+              </span>
+            </button>
+            {revealed && (
+              <div className="project-reveal-panel">
+                <div className="project-reveal-section">
+                  <span className="project-reveal-label">Ring cipher (hex)</span>
+                  <code className="project-reveal-hex">{project.reveal.hex}</code>
+                </div>
+                <p className="project-reveal-quote">&ldquo;{project.reveal.translation}&rdquo;</p>
+                <div className="project-reveal-section">
+                  <span className="project-reveal-label">Latin bands</span>
+                  {project.reveal.latinBands.map((band) => (
+                    <p key={band.latin} className="project-reveal-latin">
+                      <span className="project-reveal-latin-text">{band.latin}</span>
+                      <span className="project-reveal-latin-translation">{band.translation}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </article>
