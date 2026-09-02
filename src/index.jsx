@@ -8,6 +8,7 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Connect from './pages/Connect';
 import CcdaViewer from './pages/CcdaViewer';
+import PythonConcurrencyCourse from './pages/PythonConcurrencyCourse';
 import NotFound from './pages/NotFound';
 import { initAnalytics } from './lib/analytics';
 
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="connect" element={<Connect />} />
           <Route path="ccda-viewer" element={<CcdaViewer />} />
           <Route path="ccdaviewer" element={<Navigate to="/ccda-viewer" replace />} />
+          <Route path="python-concurrency-course" element={<PythonConcurrencyCourse />} />
           <Route path="services" element={<Navigate to="/" replace />} />
           <Route path="qualifications" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFound />} />
