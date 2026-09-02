@@ -58,6 +58,20 @@
   font-weight: 700;
 }
 
+/* react-pro-sidebar paints its own hover/focus background directly on this
+   inner <a>, a hardcoded light gray baked into its emotion CSS - it sits on
+   top of (and hides) the color-aware background/text set on .custom-menu-item
+   above, which is what made hover look broken (near-white on white) in dark
+   mode. Making this inner element always transparent lets our own themed
+   background actually show through in every state. */
+.custom-menu-item .ps-menu-button,
+.custom-menu-item .ps-menu-button:hover,
+.custom-menu-item .ps-menu-button:focus,
+.custom-menu-item .ps-menu-button:focus-visible {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
 /* Desktop: no toggle button, sidebar is always visible in its sticky column. */
 .mobile-nav-toggle {
   display: none;
@@ -147,15 +161,36 @@
   outline: none;
 }
 
+/* Kept as a spacer between nav items (its margins set the vertical rhythm)
+   but made invisible - it used to also DRAW the underline, centered on the
+   full sidebar width. That's wrong: the visible label text sits in a
+   text-align:center span that only starts after the icon column, so a line
+   centered on the whole sidebar lands to the left of where the text
+   actually centers. The real underline is drawn below, on the label span
+   itself via ::after, which centers correctly regardless of icon width or
+   sidebar width. */
 .menu-separator{
   border: none;
   height: 1px;
   font-weight: 100;
-  background-color: var(--separator); /* Adjust the color as needed */
+  background-color: transparent;
   margin: 0;
-  width: 15%; /* Adjust the percentage based on your preference */
-  margin-left: 42.5%; /* Adjust the left margin based on your preference */
-  margin-right: 42.5%; /* Adjust the right margin based on your preference */
+  width: 15%;
+  margin-left: 42.5%;
+  margin-right: 42.5%;
   margin-top: 2%;
   margin-bottom: 4%;
+}
+
+.custom-menu-item .ps-menu-label {
+  position: relative;
+}
+
+.custom-menu-item .ps-menu-label::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  margin: 6px auto 0;
+  background-color: var(--separator);
 }
