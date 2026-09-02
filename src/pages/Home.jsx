@@ -6,6 +6,7 @@ import './css/Home.css';
 import './css/shared.css';
 import ProjectShowcase from '../components/ProjectShowcase.jsx';
 import { featured_projects } from '../data/projects.js';
+import { courses } from '../data/courses.js';
 import { boxStyles } from './css/Exterior_box.js';
 
 const core_stack = ["Python", "TypeScript", "React", "Django", "AWS", "Distributed systems"];
@@ -123,6 +124,12 @@ const Home = () => {
             Experience
           </Button>
         </div>
+      </section>
+
+      <section className="home-section">
+        <h2 className="project-title">Courses</h2>
+        <hr className="header-separator" />
+        <ProjectShowcase projects={courses} />
       </section>
 
       <section className="home-section">

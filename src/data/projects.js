@@ -30,16 +30,6 @@ export const paid_projects = [
     description: "Reverse-engineered parser that makes CCDA medical files readable for legal staff at Burnes and Libman."
   },
   {
-    id: 4,
-    title: 'Python Concurrency Course',
-    link: '/concurrency-course',
-    linkLabel: 'View the course',
-    image: '/python-concurrency-course.png',
-    width: 512,
-    height: 512,
-    description: "A free, hands-on course on Python threads and multiprocessing, built after failing an interview on validating balanced parentheses in data too large for memory - 31 lessons and 30 runnable problems."
-  },
-  {
     id: 3,
     title: 'Illinois Deaths in Custody Project',
     link: 'https://ildeathsincustody.org/',
@@ -106,12 +96,12 @@ export const fun_projects = [
   },
 ];
 
-// A small, high-signal slice for the Home page teaser. The C-CDA Viewer and
-// the Python Concurrency Course are included while their dedicated pages are
-// being featured.
+// A small, high-signal slice for the Home page teaser. The C-CDA Viewer is
+// included while its dedicated download page is being featured. Courses
+// (e.g. the Python Concurrency Course) get their own Home page section
+// instead of living in this projects teaser -- see courses.js.
 export const featured_projects = [
   paid_projects[0], // NextArena - flagship / leadership
   paid_projects[2], // C-CDA Viewer - featured desktop tool and download page
-  paid_projects[3], // Python Concurrency Course - featured course page
   fun_projects[0],  // Poetics of Decryption - technical curiosity project
 ];
