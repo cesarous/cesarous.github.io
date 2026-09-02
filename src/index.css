@@ -1,14 +1,74 @@
+/* ============================================================
+   Site-wide color tokens. Light is the default (and only) look
+   unless the visitor picks dark via the sidebar toggle -- that
+   choice is remembered per-browser (see App.jsx).
+   ============================================================ */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f7f7f7;
+  --surface-2: #f0f0f0;
+  --surface-3: #fafafa;
+  --border: #d6d6d8;
+  --separator: #9b9b9e;
+
+  --text: #49494b;
+  --text-strong: #1a1a1a;
+  --text-strong-solid: #000000;
+  --text-secondary: #535353;
+  --muted: #7d7d81;
+  --muted-rgb: 125, 125, 129;
+
+  --success: #387a38;
+  --success-hover: #428142;
+  --error: #9e3a3a;
+  --accent-shadow-1: rgba(11, 43, 11, 0.2);
+  --accent-shadow-2: rgba(34, 139, 34, 0.2);
+}
+
+/* Matches the Python Concurrency Course site's dark palette, so the two
+   properties feel like the same theme when someone crosses between them. */
+:root[data-theme="dark"] {
+  --bg: #17181a;
+  --surface: #1d1e21;
+  --surface-hover: #2a2b2f;
+  --surface-2: #26272b;
+  --surface-3: #303236;
+  --border: #34363a;
+  --separator: #45484f;
+
+  --text: #d9d9da;
+  --text-strong: #f4f4f4;
+  --text-strong-solid: #ffffff;
+  --text-secondary: #bcbcbe;
+  --muted: #a0a0a5;
+  --muted-rgb: 160, 160, 165;
+
+  --success: #5fae5f;
+  --success-hover: #6fbe6f;
+  --error: #d9726c;
+  --accent-shadow-1: rgba(95, 174, 95, 0.25);
+  --accent-shadow-2: rgba(95, 174, 95, 0.3);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  /* !important: Chakra's own CSS baseline sets an unconditional
+     background on body via its own --chakra-colors-chakra-body-bg
+     variable, independent of our data-theme attribute -- it otherwise
+     wins the cascade regardless of source order. */
+  background: var(--bg) !important;
+  color: var(--text) !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 code {

@@ -8,12 +8,15 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import EngineeringIcon from '@mui/icons-material/Engineering';
+import SchoolIcon from '@mui/icons-material/School';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { Image } from "@chakra-ui/react";
+import { Image, useColorMode } from "@chakra-ui/react";
 
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -24,6 +27,7 @@ const NAV_ICONS = {
   Person: PersonIcon,
   WorkHistory: WorkHistoryIcon,
   Engineering: EngineeringIcon,
+  School: SchoolIcon,
   Phone: PhoneIcon,
 };
 
@@ -32,7 +36,8 @@ const menu_list = [
   { id: 2, title: 'About', path: '/about', icon: 'Person' },
   { id: 3, title: 'Experience', path: '/experience', icon: 'WorkHistory' },
   { id: 4, title: 'Projects', path: '/projects', icon: 'Engineering' },
-  { id: 5, title: 'Connect', path: '/connect', icon: 'Phone' },
+  { id: 5, title: 'Courses', path: '/courses', icon: 'School' },
+  { id: 6, title: 'Connect', path: '/connect', icon: 'Phone' },
 ];
 
 const setMetaContent = (selector, attributes) => {
@@ -87,6 +92,12 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [toggled, setToggled] = useState(false);
+  // Chakra's own color-mode system is the single source of truth here - it
+  // already manages document.documentElement.dataset.theme (which is what
+  // our CSS in index.css keys off), style.colorScheme, and persistence
+  // (localStorage, key "chakra-ui-color-mode"). Reading/writing it any other
+  // way just races Chakra's own mount effect and gets silently overwritten.
+  const { colorMode, toggleColorMode } = useColorMode();
 
   // Keeps the <head> in step with client-side navigation. Direct loads and
   // crawlers get these same values as static HTML - see the prerender step in
@@ -140,7 +151,15 @@ function App() {
           <span className="mobile-nav-toggle-label">Menu</span>
         </button>
 
-        <Sidebar className={`sidebar${toggled ? ' sidebar--open' : ''}`}>
+        {/* react-pro-sidebar paints its own inner container with this prop,
+            bypassing our .sidebar CSS class entirely (its default is a fixed
+            near-white, which is why the class alone didn't work in dark
+            mode) -- a CSS var() string works fine as the value here since it
+            just gets concatenated into an inline background-color rule. */}
+        <Sidebar
+          className={`sidebar${toggled ? ' sidebar--open' : ''}`}
+          backgroundColor="var(--surface)"
+        >
           <Image
             className="sidebar-logo"
             src="/favicon.ico"
@@ -156,6 +175,15 @@ function App() {
               />
             ))}
           </Menu>
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={toggleColorMode}
+            aria-label={colorMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {colorMode === 'dark' ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
+            {colorMode === 'dark' ? 'Light mode' : 'Dark mode'}
+          </button>
         </Sidebar>
 
         <div className="main-content">

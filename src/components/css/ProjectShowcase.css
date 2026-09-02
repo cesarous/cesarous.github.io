@@ -9,7 +9,7 @@
   gap: 40px;
   align-items: center;
   padding: 48px 0;
-  border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+  border-bottom: 1px solid rgba(var(--muted-rgb), 0.35);
 }
 
 .project-showcase .project-row:first-child {
@@ -51,13 +51,13 @@
   font-family: 'Gentium Book Plus', serif;
   font-weight: 400;
   font-size: 28px;
-  color: #1a1a1a;
+  color: var(--text-strong);
   margin: 0 0 12px 0;
 }
 
 .project-row-description {
   font-family: 'Source Code Pro Variable', monospace;
-  color: rgb(83, 83, 83);
+  color: var(--text-secondary);
   line-height: 1.6;
   white-space: pre-line;
   margin: 0 0 16px 0;
@@ -66,9 +66,9 @@
 .project-row-link {
   font-family: 'Red Hat Mono Variable', monospace;
   font-size: 14px;
-  color: #49494b;
+  color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid #49494b;
+  border-bottom: 1px solid var(--text);
   padding-bottom: 2px;
   transition: color 0.25s ease, border-color 0.25s ease;
 }
@@ -80,8 +80,8 @@
 
 .project-row-link:hover,
 .project-row-link:focus-visible {
-  color: #000000;
-  border-color: #000000;
+  color: var(--text-strong-solid);
+  border-color: var(--text-strong-solid);
 }
 
 .project-row-link:hover .project-row-link-arrow,
@@ -99,10 +99,10 @@
   gap: 6px;
   font-family: 'Red Hat Mono Variable', monospace;
   font-size: 14px;
-  color: #49494b;
+  color: var(--text);
   background: none;
   border: none;
-  border-bottom: 1px solid #49494b;
+  border-bottom: 1px solid var(--text);
   padding: 0 0 2px 0;
   cursor: pointer;
   transition: color 0.25s ease, border-color 0.25s ease;
@@ -110,8 +110,8 @@
 
 .project-reveal-toggle:hover,
 .project-reveal-toggle:focus-visible {
-  color: #000000;
-  border-color: #000000;
+  color: var(--text-strong-solid);
+  border-color: var(--text-strong-solid);
   outline: none;
   box-shadow: none;
 }
@@ -128,8 +128,8 @@
 .project-reveal-panel {
   margin-top: 16px;
   padding: 20px;
-  background-color: #f0f0f0;
-  border: 1px solid #d6d6d8;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 6px;
 }
 
@@ -143,7 +143,7 @@
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #7d7d81;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
@@ -151,7 +151,7 @@
   display: block;
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 13px;
-  color: #49494b;
+  color: var(--text);
   line-height: 1.7;
   word-break: break-all;
   white-space: pre-wrap;
@@ -161,14 +161,14 @@
   font-family: 'Gentium Book Plus', serif;
   font-style: italic;
   font-size: 19px;
-  color: #1a1a1a;
+  color: var(--text-strong);
   margin: 16px 0 0 0;
 }
 
 .project-reveal-latin {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 13px;
-  color: rgb(83, 83, 83);
+  color: var(--text-secondary);
   margin: 0 0 10px 0;
   display: flex;
   flex-direction: column;
@@ -180,12 +180,12 @@
 }
 
 .project-reveal-latin-text {
-  color: #49494b;
+  color: var(--text);
   letter-spacing: 0.02em;
 }
 
 .project-reveal-latin-translation {
-  color: rgb(83, 83, 83);
+  color: var(--text-secondary);
   font-style: italic;
 }
 

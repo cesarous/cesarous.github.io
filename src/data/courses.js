@@ -10,6 +10,6 @@ export const courses = [
     image: '/python-concurrency-course.png',
     width: 512,
     height: 512,
-    description: "A free, hands-on course on Python threads and multiprocessing, built after failing an interview on validating balanced parentheses in data too large for memory - 31 lessons and 30 runnable problems."
+    description: "A free, hands-on course on Python threads and multiprocessing - validating balanced parentheses in data too large for memory, split across workers and combined, MapReduce-style. 31 lessons and 30 runnable problems."
   },
 ];

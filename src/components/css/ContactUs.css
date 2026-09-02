@@ -27,7 +27,7 @@
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgb(125, 125, 129);
+  color: var(--muted);
   margin-bottom: 8px;
 }
 
@@ -35,10 +35,10 @@
 .contact-form textarea {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 16px;
-  color: #1a1a1a;
+  color: var(--text-strong);
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(125, 125, 129, 0.5);
+  border-bottom: 1px solid rgba(var(--muted-rgb), 0.5);
   padding: 6px 2px;
   outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
@@ -49,8 +49,8 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #1a1a1a;
-  box-shadow: 0 1px 0 0 #1a1a1a;
+  border-color: var(--text-strong);
+  box-shadow: 0 1px 0 0 var(--text-strong);
 }
 
 .contact-form-footer {
@@ -66,9 +66,9 @@
   font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffffff;
-  background-color: #1a1a1a;
-  border: 1px solid #1a1a1a;
+  color: var(--bg);
+  background-color: var(--text-strong);
+  border: 1px solid var(--text-strong);
   border-radius: 4px;
   padding: 12px 28px;
   cursor: pointer;
@@ -76,7 +76,7 @@
 }
 
 .contact-form-submit:hover {
-  background-color: #000000;
+  background-color: var(--text-strong-solid);
 }
 
 .contact-form-submit:active {
@@ -89,7 +89,7 @@
 }
 
 .contact-form-submit:focus-visible {
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1a1a1a;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--text-strong);
 }
 
 .contact-form-status {
@@ -99,9 +99,9 @@
 }
 
 .contact-form-status--success {
-  color: rgb(56, 122, 56);
+  color: var(--success);
 }
 
 .contact-form-status--error {
-  color: rgb(158, 58, 58);
+  color: var(--error);
 }

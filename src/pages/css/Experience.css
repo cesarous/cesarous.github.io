@@ -20,7 +20,7 @@
   grid-template-columns: 64px 1fr;
   gap: 20px;
   padding: 24px 0;
-  border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+  border-bottom: 1px solid rgba(var(--muted-rgb), 0.35);
 }
 
 .timeline:first-of-type .timeline-entry:first-child {
@@ -60,7 +60,7 @@
   font-family: 'Gentium Book Plus', serif;
   font-weight: 400;
   font-size: 21px;
-  color: #1a1a1a;
+  color: var(--text-strong);
   margin: 0;
 }
 
@@ -69,20 +69,20 @@
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgb(125, 125, 129);
+  color: var(--muted);
   white-space: nowrap;
 }
 
 .timeline-org {
   font-family: 'Red Hat Mono Variable', monospace;
   font-size: 14px;
-  color: #49494b;
+  color: var(--text);
   margin: 4px 0 10px 0;
 }
 
 .timeline-description {
   font-family: 'Source Code Pro Variable', monospace;
-  color: rgb(83, 83, 83);
+  color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
 }

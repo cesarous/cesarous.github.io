@@ -5,7 +5,7 @@
 
 .project-title{
     font-weight: 300; /* Set the font weight to 300 (light) */
-    color: #49494b;
+    color: var(--text);
     margin-top: 40px;
     font-size: 35px;
     text-align: left;
@@ -15,12 +15,12 @@
 .project-body-header{
   font-family: 'Red Hat Mono Variable', monospace;
   font-size: 20px;
-  color: #000000;
+  color: var(--text-strong-solid);
   }
 
 .project-body{
   font-family: 'Source Code Pro Variable', monospace;
-  color: rgb(83, 83, 83);
+  color: var(--text-secondary);
   }
   
 
@@ -28,7 +28,7 @@
     border: none;
     height: 1px;
     font-weight: 50;
-    background-color: rgba(125, 125, 129, 0.671); /* Adjust the color as needed */
+    background-color: rgba(var(--muted-rgb), 0.671); /* Adjust the color as needed */
     width: 100%; /* Adjust the percentage based on your preference */
      /* Adjust the left margin based on your preference */
     /*margin-right: 75%;*/ /* Adjust the right margin based on your preference */

@@ -133,11 +133,11 @@ const PythonConcurrencyCourse = () => {
         <h2 className="project-title">Why it exists</h2>
         <hr className="header-separator" />
         <p className="project-body ccda-body">
-          I failed a technical interview on exactly this problem: validate balanced parentheses in
-          an input too large to fit in memory, splitting the work across multiple workers and
-          combining partial results, MapReduce-style. This is the course I built afterward to
-          close that gap for good - for myself, and for anyone else prepping for a Python
-          concurrency interview.
+          "Validate this in data too large to fit in memory" is one of the most common shapes a
+          Python concurrency interview question takes - and most candidates have never actually
+          practiced splitting work across multiple workers and combining partial results,
+          MapReduce-style. This course builds that skill directly, with the streaming
+          balanced-parentheses problem as the running example.
         </p>
       </section>
 

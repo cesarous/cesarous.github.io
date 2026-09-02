@@ -3,9 +3,9 @@
 .tag-chip {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 13px;
-  color: #49494b;
-  background-color: #f0f0f0;
-  border: 1px solid #d6d6d8;
+  color: var(--text);
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 4px 10px;
   white-space: nowrap;

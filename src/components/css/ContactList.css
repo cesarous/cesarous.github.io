@@ -10,7 +10,7 @@
   align-items: flex-start;
   width: 100%;
   padding: 20px 4px;
-  border-bottom: 1px solid rgba(125, 125, 129, 0.35);
+  border-bottom: 1px solid rgba(var(--muted-rgb), 0.35);
   border-left: none;
   border-right: none;
   border-top: none;
@@ -24,7 +24,7 @@
 }
 
 .contact-list .contact-row:first-child {
-  border-top: 1px solid rgba(125, 125, 129, 0.35);
+  border-top: 1px solid rgba(var(--muted-rgb), 0.35);
 }
 
 .contact-row:hover,
@@ -37,14 +37,14 @@
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgb(125, 125, 129);
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
 .contact-row-value {
   font-family: 'Gentium Book Plus', serif;
   font-size: 26px;
-  color: #1a1a1a;
+  color: var(--text-strong);
   display: inline-flex;
   align-items: baseline;
   gap: 10px;
@@ -52,7 +52,7 @@
 
 .contact-row-arrow {
   font-size: 16px;
-  color: rgb(125, 125, 129);
+  color: var(--muted);
   display: inline-block;
   transition: transform 0.25s ease;
 }
@@ -67,7 +67,7 @@
   font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: rgb(66, 129, 66);
+  color: var(--success-hover);
   opacity: 0;
   transform: translateY(2px);
   transition: opacity 0.25s ease, transform 0.25s ease;

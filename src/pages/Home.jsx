@@ -127,18 +127,23 @@ const Home = () => {
       </section>
 
       <section className="home-section">
-        <h2 className="project-title">Courses</h2>
-        <hr className="header-separator" />
-        <ProjectShowcase projects={courses} />
-      </section>
-
-      <section className="home-section">
         <h2 className="project-title">Featured Projects</h2>
         <hr className="header-separator" />
         <ProjectShowcase projects={featured_projects} />
         <div className="home-cta-row">
           <Button className="button-with-hover" onClick={() => navigate('/projects')}>
             See all projects
+          </Button>
+        </div>
+      </section>
+
+      <section className="home-section">
+        <h2 className="project-title">Courses</h2>
+        <hr className="header-separator" />
+        <ProjectShowcase projects={courses} />
+        <div className="home-cta-row">
+          <Button className="button-with-hover" onClick={() => navigate('/courses')}>
+            See all courses
           </Button>
         </div>
       </section>

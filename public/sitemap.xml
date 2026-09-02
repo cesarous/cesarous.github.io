@@ -17,6 +17,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://cesarous.github.io/courses/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://cesarous.github.io/connect/</loc>
     <priority>0.6</priority>
   </url>

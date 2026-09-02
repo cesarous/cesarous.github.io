@@ -38,6 +38,10 @@ export const PAGE_META = {
     title: 'Connect | Cesar Rodriguez',
     description: 'Contact Cesar Rodriguez about software engineering roles, freelance work, and interesting technical problems.',
   },
+  '/courses': {
+    title: 'Courses | Cesar Rodriguez',
+    description: 'Free courses by Cesar Rodriguez, including a hands-on Python concurrency course.',
+  },
   '/ccda-viewer': {
     title: 'C-CDA File Viewer for Windows and macOS | Cesar Rodriguez',
     description: 'A free C-CDA file viewer for Windows and macOS. Opens CCDA XML medical records as a readable document - unlimited files, no ads, nothing leaves your computer.',
