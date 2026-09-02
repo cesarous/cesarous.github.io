@@ -43,7 +43,7 @@ export const PAGE_META = {
     description: 'A free C-CDA file viewer for Windows and macOS. Opens CCDA XML medical records as a readable document - unlimited files, no ads, nothing leaves your computer.',
     image: CCDA_IMAGE,
   },
-  '/python-concurrency-course': {
+  '/concurrency-course': {
     title: 'Python Concurrency Course | Cesar Rodriguez',
     description: 'A free, hands-on Python 3.12+ concurrency course: threads, locks, deadlocks, semaphores, the GIL, multiprocessing, and streaming reduction over data too large for memory. 31 lessons and 30 runnable problems.',
   },

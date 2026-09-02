@@ -37,7 +37,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="connect" element={<Connect />} />
           <Route path="ccda-viewer" element={<CcdaViewer />} />
           <Route path="ccdaviewer" element={<Navigate to="/ccda-viewer" replace />} />
-          <Route path="python-concurrency-course" element={<PythonConcurrencyCourse />} />
+          <Route path="concurrency-course" element={<PythonConcurrencyCourse />} />
           <Route path="services" element={<Navigate to="/" replace />} />
           <Route path="qualifications" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFound />} />

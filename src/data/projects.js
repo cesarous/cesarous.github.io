@@ -32,7 +32,7 @@ export const paid_projects = [
   {
     id: 4,
     title: 'Python Concurrency Course',
-    link: '/python-concurrency-course',
+    link: '/concurrency-course',
     linkLabel: 'View the course',
     image: '/python-concurrency-course.png',
     width: 512,
