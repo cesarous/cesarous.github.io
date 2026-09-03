@@ -162,7 +162,7 @@ function App() {
         >
           <Image
             className="sidebar-logo"
-            src="/favicon.ico"
+            src={colorMode === 'dark' ? '/laurel-dark.png' : '/laurel-light.png'}
             alt="Laurel wreath"
           />
           <Menu iconShape="square">

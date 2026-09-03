@@ -60,7 +60,6 @@
 .custom-menu-item--active {
   background-color: var(--surface-2) !important;
   color: var(--text-strong-solid) !important;
-  border-left: 3px solid var(--text);
   font-weight: 700;
 }
 
@@ -76,6 +75,24 @@
 .custom-menu-item .ps-menu-button:focus-visible {
   background-color: transparent !important;
   color: inherit !important;
+}
+
+/* Icon stays put on the left; the label is pulled out of the icon+label flex
+   row and centered against the FULL button width instead - so its text
+   lands on the same vertical center line as the laurel above it, rather
+   than centered only in the leftover space after the icon (which drifted
+   the text right of true center, worse the narrower the sidebar got). */
+.custom-menu-item .ps-menu-button {
+  position: relative !important;
+}
+
+.custom-menu-item .ps-menu-label {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+  pointer-events: none;
 }
 
 /* Desktop: no toggle button, sidebar is always visible in its sticky column. */
@@ -123,7 +140,13 @@
     max-width: none !important;
     height: auto !important;
     flex-shrink: 1;
-    border-bottom: 1px solid rgba(var(--muted-rgb), 0.35);
+    /* No outline around the open mobile menu: overrides both our own
+       desktop border-right rule (meaningless on a full-width block anyway)
+       and react-pro-sidebar's own injected near-white border-bottom, which
+       is what was actually drawing a bright line here. The toggle button
+       above already has its own border-bottom to separate it from the menu,
+       so the panel itself doesn't need a second, overlapping divider. */
+    border: none !important;
     display: none;
   }
 
