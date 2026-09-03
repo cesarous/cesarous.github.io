@@ -5,7 +5,7 @@ export const courses = [
   {
     id: 0,
     title: 'Python Concurrency Course',
-    link: '/concurrency-course',
+    link: '/courses/python-concurrency-course',
     linkLabel: 'View the course',
     image: '/python-concurrency-course.png',
     width: 512,

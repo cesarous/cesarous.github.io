@@ -62,7 +62,7 @@ const Home = () => {
               <Button className="button-with-hover" onClick={() => navigate('/ccda-viewer')}>
                 C-CDA Viewer
               </Button>
-              <Button className="button-with-hover" onClick={() => navigate('/concurrency-course')}>
+              <Button className="button-with-hover" onClick={() => navigate('/courses/python-concurrency-course')}>
                 Python Concurrency Course
               </Button>
             </div>

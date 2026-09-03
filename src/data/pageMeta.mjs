@@ -11,6 +11,7 @@
 export const SITE_URL = 'https://cesarous.github.io';
 
 const CCDA_IMAGE = `${SITE_URL}/CCDA.png`;
+const COURSE_IMAGE = `${SITE_URL}/python-concurrency-course.png`;
 
 // A 1200x630 card, the size link previews expect. The fallback used to be
 // favicon.ico, which social platforms will not render as a preview image at
@@ -47,9 +48,10 @@ export const PAGE_META = {
     description: 'A free C-CDA file viewer for Windows and macOS. Opens CCDA XML medical records as a readable document - unlimited files, no ads, nothing leaves your computer.',
     image: CCDA_IMAGE,
   },
-  '/concurrency-course': {
+  '/courses/python-concurrency-course': {
     title: 'Python Concurrency Course | Cesar Rodriguez',
     description: 'A free, hands-on Python 3.12+ concurrency course: threads, locks, deadlocks, semaphores, the GIL, multiprocessing, and streaming reduction over data too large for memory. 31 lessons and 30 runnable problems.',
+    image: COURSE_IMAGE,
   },
 };
 
