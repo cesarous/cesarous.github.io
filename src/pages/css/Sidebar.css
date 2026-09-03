@@ -25,6 +25,12 @@
     position: sticky !important;
     top: 0 !important;
     flex-shrink: 0;
+    /* react-pro-sidebar also injects its own hardcoded divider
+       (0.8px solid rgb(239,239,239)) - a near-white line that's fine on a
+       white background but glares in dark mode. Matched to the same
+       rgba(muted, 0.671) used by .header-separator elsewhere on the site,
+       so this divider reads as the same visual language in both themes. */
+    border-right: 1px solid rgba(var(--muted-rgb), 0.671) !important;
 }
 
 .sidebar-logo {
