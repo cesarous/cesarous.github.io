@@ -5,7 +5,7 @@
 // identically on Windows, macOS, and Linux. zipUrl points at GitHub's own
 // automatic branch-archive endpoint rather than a hand-built release asset,
 // since there's nothing to compile.
-export const courseInfo = {
+export const pythonConcurrencyCourseInfo = {
   liveUrl: 'https://cesarous.github.io/python-concurrency-course/',
   repoUrl: 'https://github.com/cesarous/python-concurrency-course',
   zipUrl: 'https://github.com/cesarous/python-concurrency-course/archive/refs/heads/main.zip',

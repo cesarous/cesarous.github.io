@@ -1,13 +1,13 @@
-/* Dedicated landing + download page for the C-CDA File Viewer. Reuses the
-   site's type scale (.project-title / .project-body from Projects.css) and
-   adds only what the download panel needs. */
+/* Shared landing + download layout for the promo pages (C-CDA Viewer, Python
+   Concurrency Course). Reuses the site's type scale (.project-title /
+   .project-body from Projects.css) and adds only what the download panel needs. */
 
-.ccda-hero {
+.promo-hero {
   text-align: left;
   margin-top: 4%;
 }
 
-.ccda-eyebrow {
+.promo-eyebrow {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -15,11 +15,11 @@
   margin: 0;
 }
 
-.ccda-hero-title {
+.promo-hero-title {
   margin-top: 8px;
 }
 
-.ccda-lede {
+.promo-lede {
   max-width: 65ch;
   line-height: 1.6;
   margin-top: 16px;
@@ -27,7 +27,7 @@
 
 /* Download panel ---------------------------------------------------------- */
 
-.ccda-download-panel {
+.promo-download-panel {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,21 +41,21 @@
 }
 
 /* One column per platform, side by side on desktop and stacked on mobile. */
-.ccda-download-row {
+.promo-download-row {
   display: flex;
   flex-wrap: wrap;
   gap: 18px 24px;
   width: 100%;
 }
 
-.ccda-download-option {
+.promo-download-option {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
 }
 
-.ccda-download-button {
+.promo-download-button {
   display: inline-block;
   font-family: 'Red Hat Mono Variable', monospace;
   font-size: 17px;
@@ -69,14 +69,14 @@
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.ccda-download-button:hover,
-.ccda-download-button:focus-visible {
+.promo-download-button:hover,
+.promo-download-button:focus-visible {
   background-color: var(--text-strong-solid);
   box-shadow: 0 4px 8px 0 var(--accent-shadow-1), 0 6px 20px 0 var(--accent-shadow-2);
   outline: none;
 }
 
-.ccda-download-meta {
+.promo-download-meta {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 13px;
   color: var(--muted);
@@ -86,14 +86,14 @@
 }
 
 /* Version line sits under both buttons, applying to the release as a whole. */
-.ccda-download-version {
+.promo-download-version {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 13px;
   color: var(--muted);
   margin: 6px 0 0 0;
 }
 
-.ccda-support-link {
+.promo-support-link {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 12px;
   color: var(--muted);
@@ -103,8 +103,8 @@
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.ccda-support-link:hover,
-.ccda-support-link:focus-visible {
+.promo-support-link:hover,
+.promo-support-link:focus-visible {
   color: var(--text);
   border-color: var(--text);
   outline: none;
@@ -113,67 +113,67 @@
 
 /* Body sections ----------------------------------------------------------- */
 
-.ccda-section {
+.promo-section {
   text-align: left;
   margin-top: 7%;
 }
 
-.ccda-body {
+.promo-body {
   max-width: 65ch;
   line-height: 1.6;
 }
 
 /* Per-platform heading inside a section, a step below .project-title. */
-.ccda-subhead {
+.promo-subhead {
   font-family: 'Red Hat Mono Variable', monospace;
   font-size: 16px;
   color: var(--text);
   margin: 28px 0 0 0;
 }
 
-.ccda-subhead:first-of-type {
+.promo-subhead:first-of-type {
   margin-top: 16px;
 }
 
-.ccda-list,
-.ccda-steps {
+.promo-list,
+.promo-steps {
   max-width: 65ch;
   margin: 16px 0 0 0;
 }
 
-.ccda-list {
+.promo-list {
   list-style: none;
   padding-left: 0;
 }
 
-.ccda-steps {
+.promo-steps {
   padding-left: 36px;
 }
 
-.ccda-list-item {
+.promo-list-item {
   line-height: 1.6;
   margin-bottom: 14px;
 }
 
 /* Hanging dash marker for the unordered list, to match the site's restrained
    typographic feel rather than a default bullet. */
-.ccda-list > .ccda-list-item {
+.promo-list > .promo-list-item {
   position: relative;
   padding-left: 22px;
 }
 
-.ccda-list > .ccda-list-item::before {
+.promo-list > .promo-list-item::before {
   content: "\2014";
   position: absolute;
   left: 0;
   color: rgba(var(--muted-rgb), 0.8);
 }
 
-.ccda-steps > .ccda-list-item {
+.promo-steps > .promo-list-item {
   padding-left: 4px;
 }
 
-.ccda-code {
+.promo-code {
   font-family: 'Source Code Pro Variable', monospace;
   font-size: 0.92em;
   background-color: var(--surface-2);
@@ -182,7 +182,7 @@
   padding: 1px 5px;
 }
 
-.ccda-note {
+.promo-note {
   max-width: 65ch;
   line-height: 1.6;
   margin-top: 20px;
@@ -191,7 +191,7 @@
   font-style: italic;
 }
 
-.ccda-cta-row {
+.promo-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -199,27 +199,27 @@
 }
 
 /* See .home-cta-row - spacing comes from the gap, so it survives wrapping. */
-.ccda-cta-row .button-with-hover {
+.promo-cta-row .button-with-hover {
   margin-left: 0;
   margin-right: 0;
 }
 
 @media (max-width: 640px) {
-  .ccda-download-panel {
+  .promo-download-panel {
     padding: 22px 20px;
   }
 
   /* Stack the platforms so each button can go full-width. */
-  .ccda-download-row {
+  .promo-download-row {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .ccda-download-option {
+  .promo-download-option {
     width: 100%;
   }
 
-  .ccda-download-button {
+  .promo-download-button {
     font-size: 15px;
     padding: 13px 20px;
     text-align: center;
